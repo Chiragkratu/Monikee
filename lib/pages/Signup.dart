@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monikee/pages/Additional_Details.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -165,7 +166,13 @@ class _SignupPageState extends State<SignupPage> {
                           _buildTextField('Enter OTP', false),
                           const SizedBox(height: 24),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const AdditionalDetails())
+                              );
+
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.indigo,
                               minimumSize: const Size(double.infinity, 52),
@@ -278,6 +285,36 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                           ),
                           const SizedBox(height: 24),
+                          OutlinedButton(
+                            onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                              side: BorderSide(color: Colors.grey.shade300),
+                              minimumSize: const Size(double.infinity, 52),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.network(
+                                  'https://cdn-icons-png.flaticon.com/512/732/732221.png',
+                                  height: 20,
+                                  width: 20,
+                                ),
+                                const SizedBox(width: 12),
+                                const Text(
+                                  'Continue with Microsoft',
+                                  style: TextStyle(
+                                    color: Colors.black87,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

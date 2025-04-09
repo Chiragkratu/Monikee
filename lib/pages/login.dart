@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:monikee/pages/Signup.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -297,7 +299,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 child: const Text(
                                   'Sign In',
-                                  style: TextStyle(fontSize: 16),
+                                  style: TextStyle(fontSize: 16, color:Colors.white),
                                 ),
                               ),
                               const SizedBox(height: 16),
@@ -399,6 +401,36 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ],
                                 ),
                               ),
+                              const SizedBox(height: 20),
+                              OutlinedButton(
+                                onPressed: () {},
+                                style: OutlinedButton.styleFrom(
+                                  side: BorderSide(color: Colors.grey.shade300),
+                                  minimumSize: const Size(double.infinity, 52),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.network(
+                                      'https://cdn-icons-png.flaticon.com/512/732/732221.png',
+                                      height: 20,
+                                      width: 20,
+                                    ),
+                                    const SizedBox(width: 12),
+                                    const Text(
+                                      'Continue with Microsoft',
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                               const SizedBox(height: 24),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -410,7 +442,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                   ),
                                   TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(context,  MaterialPageRoute(builder: (context) => const SignupPage()));
+                                    },
                                     style: TextButton.styleFrom(
                                       padding: EdgeInsets.zero,
                                       minimumSize: Size.zero,

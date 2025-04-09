@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import 'Address_Details.dart';
+
 class AdditionalDetails extends StatefulWidget {
   const AdditionalDetails({super.key});
 
@@ -212,6 +214,7 @@ class _AdditionalDetailsState extends State<AdditionalDetails> {
                                     backgroundColor: Colors.green,
                                   ),
                                 );
+                                Navigator.push(context,  MaterialPageRoute(builder: (context) => const AddressDetails()));
                               } else {
                                 // Show error or validation message
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -231,7 +234,7 @@ class _AdditionalDetailsState extends State<AdditionalDetails> {
                             ),
                             child: const Text(
                               'Next',
-                              style: TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: 16,color: Colors.white),
                             ),
                           ),
                           const SizedBox(height: 24),
